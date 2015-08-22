@@ -1,0 +1,1 @@
+Template.appAtNavButton.replaces 'atNavButton'

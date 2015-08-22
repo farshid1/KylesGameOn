@@ -14,18 +14,6 @@ Router._filters = {
     }
   },
 
-  clearSeenMessages: function () {
-    Messages.clearSeen();
-    this.next();
-  },
-
-  resetScroll: function () {
-    var scrollTo = window.currentScroll || 0;
-    var $body = $('body');
-    $body.scrollTop(scrollTo);
-    $body.css("min-height", 0);
-  },
-
   isLoggedIn: function () {
 
   },
@@ -73,7 +61,6 @@ Meteor.startup( function (){
     // note: this has to run in an onRun hook, because onBeforeAction hooks can get called multiple times
     // per route, which would erase the message before the user has actually seen it
     // TODO: find a way to make this work even with HCRs.
-    Router.onRun(filters.clearSeenMessages);
 
     // Before Hooks
 

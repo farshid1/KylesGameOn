@@ -16,6 +16,11 @@ Router.configure({
   //  });
   //}
 });
+App.controllers.index = App.controllers.AppController.extend({
+  layoutTemplate: 'layout',
+  loadingTemplate: 'loading',
+  notFoundTemplate: 'not_found'
+});
 
 
 App.subsManager = new SubsManager({

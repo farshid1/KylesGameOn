@@ -40,13 +40,6 @@ Package.onUse(function(api) {
 
   // Client files
   api.addFiles([
-    'lib/client/templates/common/style.css',
-    'lib/client/templates/common/layout.jade',
-    'lib/client/templates/common/layout.js',
-    'lib/client/templates/common/header.jade',
-    'lib/client/templates/common/header.js',
-    'lib/client/templates/nav/navbar.jade',
-    'lib/client/templates/nav/navbar.js',
     'lib/client/templates/dashboard.jade',
     'lib/client/templates/dashboard.js'
   ], "client");

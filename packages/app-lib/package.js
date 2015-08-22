@@ -24,37 +24,45 @@ Package.onUse(function(api) {
   //       which is more verbose and modular, but packages are defined in
   //       multiple places. You can always mix the two.
   var packages = [
-    'mongo',
-    'templating',
-    'standard-app-packages',
+    // Core
     'meteor-platform',
-    'iron:router@1.0.9',
-    'check',
-    'coffeescript@1.0.6',
-    'mquandalle:jade@0.4.3',
-    'fourseven:scss@3.2.0',
-    'http',
-    'jquery',
-    'accounts-ui',
-    'spiderable',
-    'meteorhacks:npm@1.4.0',
-    'accounts-password',
-    'email',
-    'aldeed:template-extension@3.4.3',
-    'aldeed:collection2@2.3.3',
-    'u2622:persistent-session@0.4.1',
-    'twbs:bootstrap@3.3.5',
-    'fortawesome:fontawesome@4.4.0',
-    'materialize:materialize@0.97.0',
-    'msavin:mongol@1.1.5',
-    'mike:mocha@0.6.3',
-    'velocity:html-reporter@0.8.2',
-    'accounts-password',
-    'useraccounts:materialize@1.12.2',
-    'reactive-var@1.0.5',
-    'underscore@1.0.3',
+    'meteor',
     'markdown',
-    'webapp',
+    'templating',
+    'blaze',
+
+    //+Compilers+
+    'coffeescript',
+    'fourseven:scss@3.1.1',
+    'mquandalle:jade@0.4.3',
+
+    //utilities
+    'underscore',
+    'aldeed:collection2@2.3.3',
+    'iron:router@1.0.9',
+    'u2622:persistent-session@0.4.1',
+    'dburles:collection-helpers@0.3.2',
+    'aldeed:template-extension@3.4.3',
+    'multiply:iron-router-progress@1.0.1',
+    'aldeed:autoform@5.4.1',
+    'aldeed:tabular@1.2.0',
+
+    //style libraries
+    //'twbs:bootstrap',
+    'fortawesome:fontawesome',
+
+    //accounts
+    'accounts-password',
+    'useraccounts:unstyled@1.12.2',
+    'useraccounts:iron-routing@1.12.2',
+    'mfactory:admin-lte@0.0.2',
+    'alanning:roles@1.2.11',
+    //'yogiben:admin@1.2.2',
+
+    //development and testing
+    //'msavin:mongol',
+    'mike:mocha@0.6.3',
+    'velocity:html-reporter',
     'materialize:materialize@0.97.0',
     'meteorhacks:subs-manager@1.5.2'
   ];
@@ -79,14 +87,14 @@ Package.onUse(function(api) {
   // And now.. your files! I recommend you declare namespaces in your very first
   // file.
   api.addFiles([
-    'lib/core.js' //,
+    'lib/config.coffee',
+    'lib/core.js'
     // 'lib/app.utils.js'
   ], ['client', 'server']);
 
 
   api.export([
     'App',
-    'Secondary',
     '_',
     'Meteor',
     'Template',

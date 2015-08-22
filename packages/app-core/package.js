@@ -24,6 +24,7 @@ Package.onUse(function(api) {
   // you order them in this array. MAKE SURE app:lib always goes first!
   var packages = [
     'app:lib', // no dependencies
+    'app:auth', // lib
     'app:players' //, // lib
     // 'app:module2', // ...
   ];
@@ -43,7 +44,13 @@ Package.onUse(function(api) {
 
   // client
   api.addFiles([
-
+    'lib/client/templates/common/style.css',
+    'lib/client/templates/common/layout.jade',
+    'lib/client/templates/common/layout.js',
+    'lib/client/templates/common/header.jade',
+    'lib/client/templates/common/header.js',
+    'lib/client/templates/nav/navbar.jade',
+    'lib/client/templates/nav/navbar.js',
   ], 'client');
 
   // server

@@ -17,13 +17,16 @@ App = {
 App.Settings = Meteor.settings && Meteor.settings.public
                                       && Meteor.settings.public.App;
 
-Secondary = {
-  Controllers: {},
-  Collections: {},
-  ViewModels: {},
-  Models: {},
-  Schemas: {}
-};
+App.controllers.AppController = RouteController.extend({
+  onBeforeAction: function() {
+    console.log('here in onBeforeAction in lib');
+    if (!Meteor.userId()) {
+      return Router.go('login');
+    } else {
+      return this.next();
+    }
+  }
+});
 
 /*****************************************************************************/
 /* Useful utilities (credit: iron-meteor) */
@@ -259,13 +262,13 @@ App.utils.resolve = function (nameOrValue) {
  * Utility for accessing helpers from another helper, even when the current
  *  context gets set to something non-templatey like a collection or something.
  *
- * @param   {object} template - Name of template as in <template name="name">
+ * @param   {object} template - Name of templates as in <templates name="name">
  * @param   {string} helperName - Exact name of helper.
  * @returns {object} helper
  */
 App.utils.getHelper = function(template, helperName) {
   if (! template instanceof Template) {
-    throw new Error('template arg needs to be an instance of `Template`');
+    throw new Error('templates arg needs to be an instance of `Template`');
   }
   if (! typeof(helperName) == "string") {
     throw new Error('helperName needs to be a string.');
@@ -275,4 +278,3 @@ App.utils.getHelper = function(template, helperName) {
 
 // make sure App ends up in the global namespace
 App.utils.global.App = App;
-App.utils.global.Secondary = Secondary;

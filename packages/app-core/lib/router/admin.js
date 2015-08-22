@@ -10,14 +10,14 @@ Meteor.startup(function (){
 
   //Router.route('/loading', {
   //  name: 'loading',
-  //  template: 'loading'
+  //  templates: 'loading'
   //});
   //
   //// Toolbox
   //
   //Router.route('/toolbox', {
   //  name: 'toolbox',
-  //  template: 'toolbox'
+  //  templates: 'toolbox'
   //});
 
 });

@@ -16,8 +16,10 @@ App.controllers.players =  RouteController.extend({
 
 Meteor.startup( function () {
     Router.route('/', {
-        template: 'layout',
-        controller: App.controllers.players
+        controller: App.controllers.players,
+        action: function(){
+            this.render('dashboard');
+        }
     });
 });
 
