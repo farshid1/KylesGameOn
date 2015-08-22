@@ -38,7 +38,8 @@ Package.onUse(function(api) {
   api.addFiles([
     'lib/router/config.js',
     'lib/router/filters.js',
-    'lib/router/admin.js'//,
+    'lib/router/admin.js',
+    'lib/config.coffee',
     //'lib/router/server.js',
   ]);
 
